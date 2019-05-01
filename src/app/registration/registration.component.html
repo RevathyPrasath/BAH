@@ -1,0 +1,328 @@
+<div class="Reg">
+  <div class="container">
+      <div class="row row-centered pos">
+    <h2>Register your Profile</h2>
+    <p>With SBA any registered user can have access to their mess fee details, payment dues and can make online payements. </p>
+  </div>
+  </div>
+</div>
+<div class="info">
+  <p>If you are currently an existing member, please
+    <span><a href="url">Register</a></span> or
+    <span><a href="url"> Edit your Account</a></span>
+    <br> Already have an Account
+    <span><a href="url"> Login</a></span>
+  </p>
+</div>
+
+
+<div class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="submit()" #regForm="ngForm" novalidate>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="text" id="firstName" required style="width: 80%;" class="form-controls " [ngModel]="firstName | uppercase" (ngModelChange)="firstName=$event" name="firstName"
+              #firstName="ngModel">
+              <!-- <input [ngModel]="value | myPipe" (ngModelChange)="value=$event" name="inputField" type="text" /> -->
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="firstName">First Name:</label>
+            <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+              First Name Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <input type="text" id="lastName" style="width: 80%;" required class="form-controls" [ngModel]="userlNm | uppercase" (ngModelChange)="userlNm=$event"  name="lastName"
+              #lastName="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="userName">Last Name:</label>
+            <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+              Last Name Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="text" id="pgName" style="width: 80%;" required class="form-controls" [ngModel]="userNm| uppercase" (ngModelChange)="userNm=$event" name="pgName" #pgName="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="userName">Parent/Guardian Name:</label>
+            <div *ngIf="pgName.errors && (pgName.dirty || pgName.touched)" class="alert alert-danger">
+              Parent/Guardian Name Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+
+            <input type="text" id="pemailAdd" style="width: 80%;" required class="form-controls" [(ngModel)]="pemail" name="pemailAdd"
+              #pemailAdd="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="pemailAdd">Parent Email Address:</label>
+            <div *ngIf="pemailAdd.errors && (pemailAdd.dirty || pemailAdd.touched)" class="alert alert-danger">
+              Enter a valid Email ID
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+
+            <input type="text" id="add1" required style="width: 80%;" class="form-controls " [(ngModel)]="addl1" name="add1" #add1="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="add1">Address Line1:</label>
+            <div *ngIf="add1.errors && (add1.dirty || add1.touched)" class="alert alert-danger">
+              Address Line 1 Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+
+            <input type="text" id="add2" style="width: 80%;" required class="form-controls" [(ngModel)]="addl2" name="add2" #add2="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="add2">Address Line2:</label>
+
+            <div *ngIf="add2.errors && (add2.dirty || add2.touched)" class="alert alert-danger">
+              Address Line 2 Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+
+            <input type="text" id="city" required style="width: 80%;" class="form-controls " [(ngModel)]="citynm" name="city" #city="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="city">City:</label>
+            <div *ngIf="city.errors && (city.dirty || city.touched)" class="alert alert-danger">
+              City Name Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+
+
+              <input type="text" id="pstate" required style="width: 80%;" class="form-controls " [(ngModel)]="statenm" name="pstate" #pstate="ngModel">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label for="pstate">State:</label>
+              <div *ngIf="pstate.errors && (pstate.dirty || pstate.touched)" class="alert alert-danger">
+                State Name Required
+              </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="text" id="ppincode" required style="width: 80%;" class="form-controls " [(ngModel)]="pincodenum" name="ppincode" #ppincode="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="ppincode">Pincode:</label>
+            <div *ngIf="ppincode.errors && (ppincode.dirty || ppincode.touched)" class="alert alert-danger">
+             Pincode Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <input type="text" id="pcountry" style="width: 80%;" required class="form-controls" [(ngModel)]="countrynm" name="pcountry"
+              #pcountry="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="pcountry">Country:</label>
+            <div *ngIf="pcountry.errors && (pcountry.dirty || pcountry.touched)" class="alert alert-danger">
+              Country Name Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="number" id="pnum" required style="width: 80%;" class="form-controls " [(ngModel)]="Phonenum" name="pnum" #pnum="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="pnum">Phone Number:</label>
+            <div *ngIf="pnum.errors && (pnum.dirty || pnum.touched)" class="alert alert-danger">
+              Phone Number Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <input type="number" id="parpnum" required style="width: 80%;" class="form-controls " [(ngModel)]="parPhonenum" name="parpnum"
+              #parpnum="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="parpnum">Parent's Phone Number:</label>
+            <div *ngIf="parpnum.errors && (parpnum.dirty || parpnum.touched)" class="alert alert-danger">
+              Parent's Phone Number Required
+            </div>
+          </div>
+        </div>
+        <div class="gu">
+          <h3> Local Guardian Details:</h3>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="text" id="guardName" required style="width: 80%;" class="form-controls " [ngModel]="guardianName | uppercase" (ngModelChange)="guardianName=$event" name="guardName"
+              #guardName="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="guardName">Guardian Name:</label>
+            <div *ngIf="guardName.errors && (guardName.dirty || guardName.touched)" class="alert alert-danger">
+              Guardian Name Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <input type="number" id="gpnum" required style="width: 80%;" class="form-controls " [(ngModel)]="guardianphone" name="gpnum"
+              #gpnum="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gpnum">Guardian's Phone Number:</label>
+            <div *ngIf="gpnum.errors && (gpnum.dirty || gpnum.touched)" class="alert alert-danger">
+              Guardian's Phone Number Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+
+            <input type="text" id="gadd1" required style="width: 80%;" class="form-controls " [(ngModel)]="gaddl1" name="gadd1" #gadd1="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gadd1">Address Line1:</label>
+            <div *ngIf="gadd1.errors && (gadd1.dirty || gadd1.touched)" class="alert alert-danger">
+              Address Line 1 Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+
+            <input type="text" id="gadd2" style="width: 80%;" required class="form-controls" [(ngModel)]="gaddl2" name="gadd2" #gadd2="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gadd2">Address Line2:</label>
+
+            <div *ngIf="gadd2.errors && (gadd2.dirty || gadd2.touched)" class="alert alert-danger">
+              Address Line 2 Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+
+            <input type="text" id="gcity" required style="width: 80%;" class="form-controls " [(ngModel)]="gcitynm" name="gcity" #gcity="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gcity">City:</label>
+            <div *ngIf="gcity.errors && (gcity.dirty || gcity.touched)" class="alert alert-danger">
+              City Name Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+
+
+            <input type="text" id="gstate" style="width: 80%;" pattern="[a-zA-Z]*" required class="form-controls" [(ngModel)]="gstatenm"
+              name="gstate" #gstate="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gstate">State:</label>
+            <div *ngIf="gstate.errors && (gstate.dirty || gstate.touched)" class="alert alert-danger">
+              State Name Required
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="number" id="gpincode" required style="width: 80%;" class="form-controls " [(ngModel)]="gpincodenum" name="gpincode"
+              #gpincode="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gpincode">PinCode:</label>
+            <div *ngIf="gpincode.errors && (gpincode.dirty || gpincode.touched)" class="alert alert-danger">
+              Pincode Required
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <input type="text" id="gucountry" style="width: 80%;" required class="form-controls" [(ngModel)]="gcountrynm" name="gucountry"
+              #gucountry="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="gucountry">Country:</label>
+            <div *ngIf="gucountry.errors && (gucountry.dirty || gucountry.touched)" class="alert alert-danger">
+              Country Name Required
+            </div>
+          </div>
+        </div>
+        <div class="gu">
+          <h3>User Login Registration:</h3>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+            <input type="text" id="useremailAdd" style="width: 80%;" required class="form-controls" [(ngModel)]="useremail" name="useremailAdd"
+              #useremailAdd="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="useremailAdd">User Email Address:</label>
+            <div *ngIf="useremailAdd.errors && (useremailAdd.dirty || useremailAdd.touched)" class="alert alert-danger">
+              Enter a valid Email ID
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
+              <input type="password" id="password" style="width: 80%;" required minlength="5" maxlength="10" class="form-controls" [(ngModel)]="passwd" 
+              name="password"  #password="ngModel">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="password">Password:</label>
+            <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+              Password Required
+              <div [hidden]="!password.errors.minlength">
+                Password should have a minimum of five character length .
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+
+              <input type="password" id="confirmPassword" required validateEqual="password" reverse="false" class="form-controls" [(ngModel)]="confirmPass" 
+              name="confirmPassword"  #confirmPassword="ngModel">
+              <div *ngIf="confirmPassword.errors && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+                  Retype the Password
+                  <div [hidden]="confirmPassword.valid || (confirmPassword.pristine && !regForm.submitted)" class="text-danger">
+                    Password mismatch
+                  </div>
+                </div>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="confirmPassword">Confirm Password:</label>
+            <!-- <div *ngIf="confirmPassword.errors && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+              Retype the Password -->
+              
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+            <app-agree></app-agree>
+        </div>
+      </div>
+      <div class="form-group col-md-12 g-recaptcha" data-sitekey="6Lf_WUsUAAAAAL8FuipjQnLQA5RWBPsjQzSGeagg">
+
+      </div>
+    </form>
+  </div>
+</div>
+<div class="form-group col-md-12">
+    <div id="sub">
+        <div class="inner"><button type="submit" [disabled]="!regForm.valid"(click)="fun()" class="btn btn-secondary btn-lg">Create Account</button></div>
+        <div class="inner"><button type="submit" class="btn btn-secondary btn-lg" ()="cancel()">Cancel</button></div>
+      </div>
+  </div>
+<!-- <div>
+    <label>
+       I have read and agree to SBA's Terms and conditions
+    </label>
+  </div> -->

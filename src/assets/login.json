@@ -1,0 +1,16 @@
+{
+   "student":[
+      {
+         "username":"rev",
+         "password":"rev"
+      },
+      {
+        "username":"vel",
+        "password":"rev"
+     },
+     {
+      "username":"prasath",
+      "password":"rev"
+     }
+   ]
+}

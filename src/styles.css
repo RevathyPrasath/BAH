@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face { 
+    font-family: "font-family: Sakkal_Majalla;";
+     src: url("./assets/fonts/majalla.ttf"); 
+}
+
+.bodystyle {
+    font-family: "Sakkal_Majalla";
+}
